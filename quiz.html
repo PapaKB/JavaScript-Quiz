@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<!--HTML is about content and JavaScript is about behaviour. The 2 should be separated-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>JavaScript Basics</h1>
+
+    <h2>YouTube Links</h2>
+    <ul>
+        <li> <a href="https://www.youtube.com/watch?v=W6NZfCO5SIk" target="_blank">
+            JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour</a>
+        </li>
+    </ul>
+
+    <h2>Online Courses</h2>
+    <p>Two courses were taken. One course was on Udacity and the other was on Udemy.
+        <ul>
+            <li> <a href="https://www.udacity.com/course/intro-to-javascript--ud803" target="_blank">
+                Udacity: Intro to JavaScript</a>
+            </li>
+            <li> <a href="https://www.udemy.com/course/build-a-quiz-app-with-html-css-and-javascript/" 
+                target="_blank">
+                Udemy: Build a Quiz App with HTML, CSS, and JavaScript</a>
+            </li>
+        </ul>
+    </p>
+
+    <h2>Quiz</h2>
+    <div class="container">
+        <div id="loader" style="display: none;"></div>
+        <div id="intro" class="flex-center flex-column">
+            <button id="playButton" onclick="play()">Play</button>
+            <button id="highScoresButton" onclick="showHighScores()">High Scores</button>
+        </div>
+
+        <div id="highScoresPage" style="display:block; display:none;" class="flex-center flex-column">
+            <h3 style="margin-bottom: 1rem;">High Scores</h3>
+            <ul id="highScoresList" class="flex-center flex-column"></ul>
+            <button id="homePage" onclick="playAgain()">Home Page</button>
+        </div>
+
+        <div id="game" style="display:block; display:none;" class="justify-center flex-column">
+            <div id="hud"> <!--hud = Heads Up Display -->
+                <div id="hud-item">
+                    <p class="hud-prefix" id="progressText">
+                        Question
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFill"></div>
+                    </div>
+                    <!-- <p class="hud-prefix">
+                        Question
+                    </p>
+                    <h4 class="hud-main-text" id="questionCounter">
+                        1/10
+                    </h4> -->
+                </div>
+                <div id="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h4 class="hud-main-text" id="score">
+                        0
+                    </h4>
+                </div>
+            </div>
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; text-align: center;" id="question">What is the answer to this question?</h3> <!--Length of choice boxes is greatest length in container -->
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice 1</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4">Choice 4</p>
+            </div>
+        </div>
+
+        <div id="end" style="display:block; display:none;" class="flex-center flex-column">
+            <h2 id="finalScore" style="text-align: center;">0</h2>
+            <form id="form">
+                <input type="text" name="username" id="username" placeholder="Username"/>
+                <button disabled type="submit" id="saveScoreButton" onclick="saveScore(event)" >Save</button>
+            </form>
+            <button id="playAgain" onclick="playAgain()">Play Again</button>
+
+        </div>
+    </div>
+
+    <!--
+        script is where JavaScript code goes
+        script best placed at bottom of body so javascript is being parsed after page is loaded.
+    -->
+    <script src="javaScript.js"></script>
+
+</body>
+
+</html>

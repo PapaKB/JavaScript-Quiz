@@ -1,0 +1,216 @@
+:root {
+    background-color: rgb(176,180,212);
+    font-size: 52.5%; /*default font size is 16px so 62.5% of 16px is 10px. This will be used
+    to make relative sizes for the diplay (rem). 1 rem == 10px */
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    box-sizing: border-box; /*this means that border of boxes are including in box size */
+    margin: 0;
+    padding: 0;
+    color: rgb(18, 19, 22);
+}
+
+h1,h2,h3,h4 {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+h1 {
+    font-size: 5.4rem;
+    margin: 1rem;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(123, 124, 156);
+    text-align: center;
+    color: rgb(236, 245, 255);
+}
+
+h1 > span { /*applies to all span elements where the parent is h1*/
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+}
+
+h3  {
+    font-size: 2.8rem;
+}
+
+a {
+    color: rgb(92, 39, 145); 
+    background-color: transparent; 
+    text-decoration:none;
+}
+
+a:hover {
+    color: rgb(39, 99, 152);
+}
+
+ul {
+    margin-left: 8rem;
+}
+
+p{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.container {
+    /* width: 100vw; Takes 100% of the view width */
+    /* height: 100vh; Takes 100% of the view height */
+    display: flex; /* flex is useful for setting the length of flexible elements to the same*/
+    justify-content: center; /*Centering in the horizontal direction*/ 
+    align-items:center; /*Centering in the vertical direction*/
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.choice-container {
+    display:flex;/*Shows answer letter and answer on the same line*/
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(123, 124, 156);
+    background-color: whitesmoke;
+    border-radius: 10px;
+    overflow: hidden; /*Allows radius to affect inner elemnts like choice-prefix*/
+}
+
+.choice-container:hover {
+    cursor: pointer; /*Puts pointer finger when hovering over choice*/
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(88, 134, 191);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: rgb(88, 134, 191);
+    color: whitesmoke;
+}
+
+.choice-text {
+    padding: 1.5rem;
+    width: 100%; /*The text area will take up the whole box this allows the whole box to be cliked to select an answer*/
+}
+
+.correct { /* Turns choice-text background green if answer selcted is correct*/
+    background-color: rgb(89, 162, 89);
+}
+
+.incorrect { /* Turns choice-text background red if answer selcted is correct*/
+    background-color: rgb(175, 80, 80);
+}
+
+/*HUD*/
+
+#hud {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hud-prefix {
+    text-align: center;
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+#progressBar {
+    width: 29rem;
+    height: 4rem;
+    border: 0.3rem solid rgb(88, 134, 191);
+}
+
+#progressBarFill {
+    height: 100%;
+    background-color: rgb(88, 134, 191);
+    width: 0%;
+}
+
+button {
+    padding: 1rem;
+    margin: 0.3rem;
+    border-radius: 1rem;
+}
+
+button:hover {
+    cursor: pointer; /* Puts pointer finger when hovering over choice */
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(123, 124, 156);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+button[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 0.3rem;
+    padding: 0.5rem;
+}
+
+#highScoresList {
+    margin-left: 0;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.high-score {
+    margin: 0.25rem;
+}
+
+.high-score:hover {
+    transform: scale(1.5);
+}
+
+/* LOADER
+ * when a question is loading the dummy text is shown (the text written in html doc) so a loader is needed to prevent this from being shown
+ */
+
+#loader  {
+    border: 1.6rem solid whitesmoke;
+    border-radius: 50%;
+    border-top: 1.6rem solid rgb(88, 134, 191);
+    width: 12rem;
+    height: 12rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

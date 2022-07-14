@@ -1,0 +1,26 @@
+[
+    {
+        "question":"How many days are there in a week?",
+        "choice1":"7",
+        "choice2":"14",
+        "choice3":"28",
+        "choice4":"32",
+        "answer":1
+    },
+    {
+        "question":"How many hours are there in a day?",
+        "choice1":"24",
+        "choice2":"12",
+        "choice3":"6",
+        "choice4":"48",
+        "answer":1
+    },
+    {
+        "question":"How many minutes are there in an hour?",
+        "choice1":"12",
+        "choice2":"60",
+        "choice3":"1",
+        "choice4":"2",
+        "answer":2
+    }
+]
